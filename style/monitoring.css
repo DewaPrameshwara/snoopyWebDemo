@@ -57,6 +57,10 @@
   color: var(--pink);
 }
 
+.monitoring-page button {
+  font-size: 80%;
+}
+
 @media (min-width: 992px) {
   .monitoring-page .small .box .header {
     font-size: 1em;
@@ -68,5 +72,8 @@
 
   .monitoring-page .big .box .header {
     font-size: 1.2em;
+  }
+  .monitoring-page button {
+    font-size: 100%;
   }
 }
