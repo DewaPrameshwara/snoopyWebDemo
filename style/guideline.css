@@ -1,0 +1,78 @@
+.definition .card-header {
+  background-color: var(--morepink);
+}
+
+.card-header img {
+  margin: 0 0 -10px -15px;
+  width: 35%;
+}
+
+.card-header h1,
+.more-head h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  margin-top: 15px;
+  color: #18375d;
+}
+
+.more-head h1 {
+  font-weight: 400;
+}
+
+.card-header h1 span {
+  font-family: "IBM Plex Mono", monospace !important;
+  font-weight: 800;
+  color: var(--red);
+}
+
+.card-body ul {
+  list-style: none;
+}
+
+.card-body i {
+  margin-right: 5%;
+}
+
+.card-body .card-text,
+.more-text {
+  font-size: 0.8em;
+}
+
+.more-head {
+  border-bottom: 2px solid #18375d;
+  width: fit-content;
+}
+
+span.warning {
+  color: var(--red);
+}
+
+.more-row {
+  width: 100%;
+  height: fit-content;
+  background-color: white;
+}
+
+.card i,
+.information i {
+  color: var(--red);
+  margin-right: 10px;
+}
+
+.information i {
+  font-size: 2rem;
+}
+
+.more-row .text {
+  font-size: 1em;
+  color: #18375d;
+  font-weight: 800;
+}
+
+.more-text {
+  font-weight: 400;
+}
+
+.accordion {
+  margin: 0px auto;
+}

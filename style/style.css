@@ -1,0 +1,107 @@
+:root {
+  --red: #c71b1a;
+  --pink: #d30d66;
+  --morepink: #ffbcbc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(/aset/image/background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  scroll-behavior: smooth !important;
+}
+
+/* Spinner */
+#spinner {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+  z-index: 99999;
+}
+
+#spinner.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#spinner img {
+  width: 4.2rem !important;
+  height: auto !important;
+}
+
+.spinner-border {
+  width: 6rem;
+  height: 6rem;
+  color: var(--red) !important;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 5%;
+}
+
+nav .nav-title,
+.offcanvas-title,
+.home-page .content .hello {
+  font-family: cursive;
+  font-size: 50px;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--red);
+}
+
+nav .nav-title,
+.offcanvas-title {
+  font-size: 25px;
+}
+
+.funnel-font {
+  color: var(--red);
+}
+
+.funnel-font,
+nav li.nav-item a {
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+}
+
+nav li.nav-item a {
+  color: darkslategray;
+  text-transform: uppercase;
+}
+
+nav li.nav-item a:hover {
+  color: var(--pink);
+}
+
+.offcanvas {
+  background-color: #ffe9e9;
+}
+
+.page-title {
+  margin-top: 10vh;
+  color: var(--red);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.text {
+  font-family: "Glacial Indifference", sans-serif;
+}
+
+/* responsive */
+
+/* HP */
+@media (max-width: 768px) {
+  .offcanvas {
+    width: 75vw !important;
+  }
+}

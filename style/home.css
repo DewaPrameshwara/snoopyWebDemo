@@ -1,0 +1,36 @@
+.home-page {
+  height: 100vh;
+  padding: 5%;
+}
+
+.home-page .content {
+  transform: translateY(-5%);
+}
+
+.home-page .content img {
+  max-height: 60vh;
+  transform: translateY(130px);
+}
+
+/* responsive */
+/* Tablet */
+@media (max-width: 1024px) {
+  .home-page .content img {
+    transform: translateY(10px);
+  }
+}
+
+/* HP */
+@media (max-width: 768px) {
+  .home-page .content {
+    transform: translateY(-25%);
+  }
+
+  .home-page .content .hello,
+  .home-page .content .box,
+  .home-page .content hr,
+  .home-page .content h1,
+  .home-page .content h4 {
+    transform: translateY(-60px);
+  }
+}

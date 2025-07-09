@@ -1,0 +1,15 @@
+.history-page main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+}
+
+.history-page main .no-data {
+  margin: 25vh auto;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.history-page main .card {
+  border-left: 25px solid var(--pink);
+}

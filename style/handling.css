@@ -1,0 +1,19 @@
+.handlingapnea-page main .accordion-header button {
+  border-left: 20px solid var(--morepink);
+  border-radius: 0px;
+}
+
+.handlingapnea-page main .accordion-header button.arrow-none::after {
+  display: none !important;
+}
+
+.handlingapnea-page main .accordion-header button span {
+  font-weight: bold;
+  color: var(--red);
+}
+
+.handlingapnea-page main .accordion-collapse img {
+  width: 50%;
+  display: block;
+  margin: 0px auto;
+}

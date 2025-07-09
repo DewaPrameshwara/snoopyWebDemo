@@ -1,0 +1,72 @@
+:root {
+  --blueOksigen: rgb(65, 184, 213);
+  --redHeart: rgb(211, 13, 102);
+}
+
+.monitoring-page {
+  font-family: "Funnel Display", sans-serif;
+}
+
+.monitoring-page .alert {
+  display: flex;
+  justify-content: space-between;
+}
+
+.monitoring-page .small .box {
+  min-width: 150px;
+  max-width: 300px;
+  background-color: white;
+}
+
+.monitoring-page .small .oksigen .box {
+  border-left: 15px solid var(--blueOksigen);
+}
+
+.monitoring-page .small .heart .box {
+  border-left: 15px solid var(--redHeart);
+}
+
+.monitoring-page .small .oksigen .header {
+  color: var(--blueOksigen);
+}
+
+.monitoring-page .small .heart .header {
+  color: var(--redHeart);
+}
+
+.monitoring-page .small .box .header {
+  font-weight: 600;
+  font-size: 0.8em;
+}
+
+.monitoring-page .small .box .data {
+  height: 50px;
+  font-size: 1.5em;
+}
+
+.monitoring-page .big .box {
+  margin: 0px auto;
+  background-color: white;
+  margin: 0px auto;
+}
+
+.monitoring-page .big .box .header {
+  background-color: var(--morepink);
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--pink);
+}
+
+@media (min-width: 992px) {
+  .monitoring-page .small .box .header {
+    font-size: 1em;
+  }
+
+  .monitoring-page .small .box .data {
+    font-size: 2em;
+  }
+
+  .monitoring-page .big .box .header {
+    font-size: 1.2em;
+  }
+}
