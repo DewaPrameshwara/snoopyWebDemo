@@ -1,3 +1,3 @@
-#SNOOPY web demo
+# SNOOPY web demo
 
 © 2025 Dewa Prameshwara
