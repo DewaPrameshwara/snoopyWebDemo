@@ -1,12 +1,12 @@
 const btn = document.getElementById("ssChart");
 
 const readings = [
-  { waktu: "2025-07-17 21:00", bpm: 60, spo2: 73 },
-  { waktu: "2025-07-17 23:34", bpm: 58, spo2: 72 },
-  { waktu: "2025-07-17 23:52", bpm: 63, spo2: 78 },
-  { waktu: "2025-07-18 02:04", bpm: 55, spo2: 76 },
-  { waktu: "2025-07-18 02:05", bpm: 59, spo2: 80 },
-  { waktu: "2025-07-18 04:45", bpm: 67, spo2: 78 },
+  { waktu: "2025-07-17 21:00:04", bpm: 60, spo2: 87 },
+  { waktu: "2025-07-17 21:00:05", bpm: 62, spo2: 87 },
+  { waktu: "2025-07-17 21:00:06", bpm: 63, spo2: 89 },
+  { waktu: "2025-07-17 21:00:07", bpm: 67, spo2: 88 },
+  { waktu: "2025-07-17 21:00:08", bpm: 70, spo2: 90 },
+  { waktu: "2025-07-17 21:00:09", bpm: 73, spo2: 91 },
 ];
 
 const doc = new jsPDF();
@@ -49,4 +49,5 @@ btn.addEventListener("click", () => {
 
   // Unduh file PDF
   doc.save(`Laporan Snoopy ${date.toLocaleDateString()}.pdf`);
+  alert(`File telah disimpan sebagai "Laporan Snoopy ${date.toLocaleDateString()}.pdf", periksa folder Unduhan anda`);
 });

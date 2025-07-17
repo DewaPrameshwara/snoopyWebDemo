@@ -19,6 +19,8 @@
     <!-- css -->
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/history.css">
+    <!-- Save pdf js -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
   </head>
   <body class="overflow-x-hiddens">
 
@@ -99,6 +101,7 @@
        <div id="history" class="page history-page">
         <header>
           <a class="nav-link page-title" href="history.html#history"> <i class="fa-solid fa-clock-rotate-left fa-xl me-2"></i>History of Apnea</a>
+          <button type="button" class="btn btn-secondary mt-3" id="downloadBtn">Download Riwayat Apnea (.pdf)</button>
         </header>
         
         <main class="mt-5">
@@ -110,56 +113,56 @@
             <div class="card-body">
               <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>08/07/2025</h5>
               <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 23.07.20</p>
-              <p class="card-text"><strong>SPO2: 83% | BPM: 55 bpm</strong></p>
+              <p class="card-text"><strong>SPO2: 73% | BPM: 55 bpm</strong></p>
             </div>
           </div>
           <div class="card mb-3 ps-2" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>08/07/2025</h5>
-              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 23.07.20</p>
-              <p class="card-text"><strong>SPO2: 83% | BPM: 55 bpm</strong></p>
+              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>10/07/2025</h5>
+              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 23.57.50</p>
+              <p class="card-text"><strong>SPO2: 74% | BPM: 63 bpm</strong></p>
             </div>
           </div>
           <div class="card mb-3 ps-2" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>08/07/2025</h5>
-              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 23.07.20</p>
-              <p class="card-text"><strong>SPO2: 83% | BPM: 55 bpm</strong></p>
+              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>16/07/2025</h5>
+              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 22.07.34</p>
+              <p class="card-text"><strong>SPO2: 74% | BPM: 59 bpm</strong></p>
             </div>
           </div>
           <div class="card mb-3 ps-2" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>08/07/2025</h5>
-              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 23.07.20</p>
-              <p class="card-text"><strong>SPO2: 83% | BPM: 55 bpm</strong></p>
+              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>17/07/2025</h5>
+              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 00.07.02</p>
+              <p class="card-text"><strong>SPO2: 77% | BPM: 55 bpm</strong></p>
             </div>
           </div>
           <div class="card mb-3 ps-2" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>08/07/2025</h5>
-              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 23.07.20</p>
-              <p class="card-text"><strong>SPO2: 83% | BPM: 55 bpm</strong></p>
+              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>23/07/2025</h5>
+              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 04.54.20</p>
+              <p class="card-text"><strong>SPO2: 80% | BPM: 56 bpm</strong></p>
             </div>
           </div>
           <div class="card mb-3 ps-2" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>08/07/2025</h5>
-              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 23.07.20</p>
-              <p class="card-text"><strong>SPO2: 83% | BPM: 55 bpm</strong></p>
+              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>27/07/2025</h5>
+              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 22.47.26</p>
+              <p class="card-text"><strong>SPO2: 73% | BPM: 55 bpm</strong></p>
             </div>
           </div>
           <div class="card mb-3 ps-2" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>08/07/2025</h5>
-              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 23.07.20</p>
-              <p class="card-text"><strong>SPO2: 83% | BPM: 55 bpm</strong></p>
+              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>30/07/2025</h5>
+              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 00.07.20</p>
+              <p class="card-text"><strong>SPO2: 74% | BPM: 55 bpm</strong></p>
             </div>
           </div>
           <div class="card mb-3 ps-2" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>08/07/2025</h5>
-              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 23.07.20</p>
-              <p class="card-text"><strong>SPO2: 83% | BPM: 55 bpm</strong></p>
+              <h5 class="card-title"><i class="fa-solid fa-calendar-days fa-xl me-2"></i>30/07/2025</h5>
+              <p class="card-text"><strong>Apnea Terdeteksi!</strong> <br>pada pukul 02.17.29</p>
+              <p class="card-text"><strong>SPO2: 73% | BPM: 59 bpm</strong></p>
             </div>
           </div>
         </main>
@@ -171,5 +174,6 @@
     <!-- script -->
     <script src="./script/main.js"></script>
     <script type="module" src="./script/history.js"></script>
+    <script src="./script/savehistory.js"></script>
   </body>
 </html>
