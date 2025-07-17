@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/home.css">
     <link rel="stylesheet" href="./style/monitoring.css">
+    <!-- Save pdf js -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
   </head>
   <body class="overflow-x-hiddens">
 
@@ -133,7 +135,7 @@
             </div>
           </div>
           <button type="button" class="btn btn-primary" id="monitoring-btn">Start Monitoring</button>
-          <button type="button" class="btn btn-secondary" id="ssChart">📸 Screenshot Chart</button> <br>
+          <button type="button" class="btn btn-secondary" id="ssChart">Download rekaman data (.pdf)</button> <br>
           <button type="button" class="btn btn-success mt-5" id="demo-monitoring-btn">Start Monitoring (Demo)</button>
         </main>
       </div>
@@ -145,5 +147,6 @@
     <!-- script -->
     <script src="./script/main.js"></script>
     <script type="module" src="./script/chart.js"></script>
+    <script src="./script/savepdf.js"></script>
   </body>
 </html>

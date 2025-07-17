@@ -4,7 +4,6 @@ const dataBPM = document.getElementById("data-bpm");
 const monitoringBtn = document.getElementById("monitoring-btn");
 const demoMonitoringBtn = document.getElementById("demo-monitoring-btn");
 const alertPlaceHolder = document.querySelector(".alert-placeHolder");
-const ssButton = document.getElementById("ssChart");
 let startMonitor = false;
 let intervalId;
 
@@ -68,12 +67,12 @@ demoMonitoringBtn.addEventListener("click", () => {
   }
 });
 
-ssButton.addEventListener("click", () => {
-  const link = document.createElement("a");
-  link.href = chart.toBase64Image();
-  link.download = `snoopy's chart-${new Date().toISOString().slice(0, 19)}.png`;
-  link.click();
-});
+// ssButton.addEventListener("click", () => {
+//   const link = document.createElement("a");
+//   link.href = chart.toBase64Image();
+//   link.download = `snoopy's chart-${new Date().toISOString().slice(0, 19)}.png`;
+//   link.click();
+// });
 
 // simulasi
 function simulation() {
