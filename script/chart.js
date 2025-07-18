@@ -151,7 +151,7 @@ function showAlert() {
   <div class="alert alert-warning alert-dismissible" role="alert">
     <div>
       <strong>Terjadi kesalahan pada alat snoopy</strong>
-      <p style="font-size: .8rem;">Nyalakan alat atau perika koneksi</p>
+      <p style="font-size: .8rem;">Nyalakan alat atau periksa koneksi</p>
     </div>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
