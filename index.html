@@ -137,6 +137,17 @@
           <button type="button" class="btn btn-primary mt-3" id="monitoring-btn">Start Monitoring</button>
           <button type="button" class="btn btn-secondary mt-3" id="ssChart">Download rekaman data (.pdf)</button> <br>
           <button type="button" class="btn btn-success mt-5" id="demo-monitoring-btn">Start Monitoring (Demo)</button>
+          <div class="filter">
+            <label for="min-date">Waktu Mulai: </label>
+            <input id="min-date" type="date" min="2000-01-01" max="2099-12-31">
+            <input id="min-time" type="time">
+            <label for="max-date">Waktu Selesai: </label>
+            <input id="max-date" type="date" min="2000-01-01" max="2099-12-31">
+            <input id="max-time" type="time">
+            <label for="interval">Interval (detik): </label>
+            <input id="interval" type="number" min="1" value="1">
+            <button type="button" class="btn btn-secondary mt-3" id="submitSsChart">Apply Filter</button> <br>
+          </div>
         </main>
       </div>
 
@@ -147,6 +158,5 @@
     <!-- script -->
     <script src="./script/main.js"></script>
     <script type="module" src="./script/chart.js"></script>
-    <script src="./script/savepdf.js"></script>
   </body>
 </html>
