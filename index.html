@@ -134,32 +134,36 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-primary mt-3" id="monitoring-btn">Start Monitoring</button>
-          <button type="button" class="btn btn-secondary mt-3" id="ssChart">Download rekaman data (.pdf)</button> <br>
+          <button type="button" class="btn btn-primary mt-2" id="monitoring-btn">Start Monitoring</button>
+          <button type="button" class="btn btn-secondary mt-2" id="ssChart">Download rekaman data (.pdf)</button> <br>
           <button type="button" class="btn btn-success mt-5" id="demo-monitoring-btn">Start Monitoring (Demo)</button>
         </main>
       </div>
 
       <div id="filter-offcanvas" class="d-none">
-         <div class="filter px-5">
+         <div class="filter py-2 py-md-3 px-2 px-md-5">
             <div class="row">
-              <h3 class="header">Data kapan yang ingin anda simpan?</h3>
+              <h3 class="header text-center">Data kapan yang ingin anda simpan?</h3>
             </div>
-            <div class="row">
-              <div class="col">
+            <div class="row mt-4">
+              <div class="col-12">
                 <label for="min-date">Waktu Mulai: </label>
+              </div>
+              <div class="col">
                 <input id="min-date" type="date" min="2000-01-01" max="2099-12-31">
                 <input id="min-time" type="time">
               </div>
             </div>
-            <div class="row">
-              <div class="col">
+            <div class="row mt-4">
+              <div class="col-12">
                 <label for="max-date">Waktu Selesai: </label>
+              </div>
+              <div class="col">
                 <input id="max-date" type="date" min="2000-01-01" max="2099-12-31">
                 <input id="max-time" type="time">
               </div>
             </div>
-            <div class="row">
+            <div class="row mt-4">
               <div class="col">
                 <label for="interval">Interval : </label>
                 <input id="interval" type="number" min="1" max="3600" value="1">
@@ -167,7 +171,7 @@
                 <p>max 3600 detik (1 jam)</p>
               </div>
             </div>
-            <div class="row align-self-end">
+            <div class="row mt-4 align-self-end">
               <div class="col">
                 <button type="button" class="btn btn-secondary" id="submitSsChartCancel" style="font-size: 1.2em;">Cancel</button> <br>
               </div>

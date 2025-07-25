@@ -28,7 +28,6 @@ const cancelSubmit = document.getElementById("submitSsChartCancel");
 //   { waktu: "2025-07-17 21:00:08", bpm: 70, spo2: 90 },
 //   { waktu: "2025-07-17 21:00:09", bpm: 73, spo2: 91 },
 // ];
-const doc = new jsPDF();
 
 const chart = new Chart(ctx, {
   type: "line",
@@ -101,69 +100,72 @@ btn.addEventListener("click", () => {
       filterOffCanvas.classList.add("d-none");
     }
   });
-  submitBtn.addEventListener("click", () => {
-    const data_minDate = minDate.value;
-    const data_maxDate = maxDate.value;
-    const data_minTime = minTime.value;
-    const data_maxTime = maxTime.value;
-    const data_interval = interval.value;
-    if (data_interval > 3600) {
-      alert("Jumlah interval terlalu tinggi.\nMaksimal 3600 detik (1 jam)");
+});
+
+submitBtn.addEventListener("click", () => {
+  const doc = new jsPDF();
+
+  const data_minDate = minDate.value;
+  const data_maxDate = maxDate.value;
+  const data_minTime = minTime.value;
+  const data_maxTime = maxTime.value;
+  const data_interval = interval.value;
+  if (data_interval > 3600) {
+    alert("Jumlah interval terlalu tinggi.\nMaksimal 3600 detik (1 jam)");
+  }
+  const readings = random(data_minDate, data_maxDate, data_minTime, data_maxTime, data_interval);
+  console.log(readings);
+  console.log({ data_minDate, data_maxDate, data_minTime, data_maxTime, data_interval });
+  // const date = new Date();
+  if (readings.length == 0) {
+    alert("Tidak ada data dalam rentang waktu tersebut.");
+    return;
+  }
+  const first = readings[0].waktu;
+  const last = readings[readings.length - 1].waktu;
+
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const title = `Laporan Pembacaan Snoopy`;
+  const subtitle = `${first} sampai ${last}`;
+
+  // Judul Tengah
+  const titleWidth = doc.getTextWidth(title);
+  const subtitleWidth = doc.getTextWidth(subtitle);
+  const xTitle = (pageWidth - titleWidth) / 2;
+  const xSubtitle = (pageWidth - subtitleWidth) / 2;
+  const startY = 15;
+  let y = startY + 10;
+  doc.text(title, xTitle, startY);
+  doc.text(subtitle, xSubtitle, y);
+
+  // Header Tabel
+  y = startY + 35;
+  doc.setFont("helvetica", "bold");
+  doc.text("Waktu", 14, y);
+  doc.text("BPM", 80, y);
+  doc.text("SPO2", 130, y);
+  doc.setFont("helvetica", "normal");
+
+  // Isi Tabel
+  y = y + 10;
+  readings.forEach((r) => {
+    doc.text(r.waktu, 14, y);
+    doc.text(r.bpm.toString(), 80, y);
+    doc.text(r.spo2.toString(), 130, y);
+    y += 10;
+
+    if (y > 280) {
+      doc.addPage();
+      y = 20;
     }
-    const readings = random(data_minDate, data_maxDate, data_minTime, data_maxTime, data_interval);
-    console.log(readings);
-    console.log({ data_minDate, data_maxDate, data_minTime, data_maxTime, data_interval });
-    // const date = new Date();
-    if (readings.length == 0) {
-      alert("Tidak ada data dalam rentang waktu tersebut.");
-      return;
-    }
-    const first = readings[0].waktu;
-    const last = readings[readings.length - 1].waktu;
-
-    const pageWidth = doc.internal.pageSize.getWidth();
-    const title = `Laporan Pembacaan Snoopy`;
-    const subtitle = `${first} sampai ${last}`;
-
-    // Judul Tengah
-    const titleWidth = doc.getTextWidth(title);
-    const subtitleWidth = doc.getTextWidth(subtitle);
-    const xTitle = (pageWidth - titleWidth) / 2;
-    const xSubtitle = (pageWidth - subtitleWidth) / 2;
-    const startY = 15;
-    let y = startY + 10;
-    doc.text(title, xTitle, startY);
-    doc.text(subtitle, xSubtitle, y);
-
-    // Header Tabel
-    y = startY + 35;
-    doc.setFont("helvetica", "bold");
-    doc.text("Waktu", 14, y);
-    doc.text("BPM", 80, y);
-    doc.text("SPO2", 130, y);
-    doc.setFont("helvetica", "normal");
-
-    // Isi Tabel
-    y = y + 10;
-    readings.forEach((r) => {
-      doc.text(r.waktu, 14, y);
-      doc.text(r.bpm.toString(), 80, y);
-      doc.text(r.spo2.toString(), 130, y);
-      y += 10;
-
-      if (y > 280) {
-        doc.addPage();
-        y = 20;
-      }
-    });
-
-    // Unduh file PDF
-    const fileName = `Laporan Snoopy ${first} sampai ${last}.pdf`;
-    doc.save(fileName);
-    alert(`File telah disimpan sebagai "${fileName}", periksa folder Unduhan anda`);
-    filterOffCanvas.classList.add("d-none");
-    location.reload();
   });
+
+  // Unduh file PDF
+  const fileName = `Laporan Snoopy ${first} sampai ${last}.pdf`;
+  doc.save(fileName);
+  alert(`File telah disimpan sebagai "${fileName}", periksa folder Unduhan anda`);
+  filterOffCanvas.classList.add("d-none");
+  location.reload();
 });
 
 // simulasi
