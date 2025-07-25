@@ -12,10 +12,14 @@ const minTime = document.getElementById("min-time");
 const maxTime = document.getElementById("max-time");
 const interval = document.getElementById("interval");
 
+const filterOffCanvas = document.getElementById("filter-offcanvas");
+const popUp = filterOffCanvas.querySelector(".filter");
+
 let startMonitor = false;
 let intervalId;
 const btn = document.getElementById("ssChart");
 const submitBtn = document.getElementById("submitSsChart");
+const cancelSubmit = document.getElementById("submitSsChartCancel");
 // const readings = [
 //   { waktu: "2025-07-17 21:00:04", bpm: 60, spo2: 87 },
 //   { waktu: "2025-07-17 21:00:05", bpm: 62, spo2: 87 },
@@ -87,12 +91,25 @@ demoMonitoringBtn.addEventListener("click", () => {
 });
 
 btn.addEventListener("click", () => {
+  filterOffCanvas.classList.remove("d-none");
+  cancelSubmit.addEventListener("click", () => {
+    filterOffCanvas.classList.add("d-none");
+    resetFilterInput();
+  });
+  document.addEventListener("click", (e) => {
+    if (!popUp.contains(e.target) && !btn.contains(e.target)) {
+      filterOffCanvas.classList.add("d-none");
+    }
+  });
   submitBtn.addEventListener("click", () => {
     const data_minDate = minDate.value;
     const data_maxDate = maxDate.value;
     const data_minTime = minTime.value;
     const data_maxTime = maxTime.value;
     const data_interval = interval.value;
+    if (data_interval > 3600) {
+      alert("Jumlah interval terlalu tinggi.\nMaksimal 3600 detik (1 jam)");
+    }
     const readings = random(data_minDate, data_maxDate, data_minTime, data_maxTime, data_interval);
     console.log(readings);
     console.log({ data_minDate, data_maxDate, data_minTime, data_maxTime, data_interval });
@@ -144,6 +161,8 @@ btn.addEventListener("click", () => {
     const fileName = `Laporan Snoopy ${first} sampai ${last}.pdf`;
     doc.save(fileName);
     alert(`File telah disimpan sebagai "${fileName}", periksa folder Unduhan anda`);
+    filterOffCanvas.classList.add("d-none");
+    location.reload();
   });
 });
 
@@ -181,4 +200,12 @@ function showAlert() {
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 `;
+}
+
+function resetFilterInput() {
+  minDate.value = "";
+  maxDate.value = "";
+  minTime.value = "";
+  maxTime.value = "";
+  interval.value = 1;
 }
