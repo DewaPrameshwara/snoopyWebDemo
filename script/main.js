@@ -1,20 +1,19 @@
 // spinner loading
-(function () {
-  "use strict";
-
-  var hideSpinner = function () {
-    setTimeout(function () {
-      var spinner = document.getElementById("spinner");
-      if (spinner) {
-        spinner.classList.add("hide");
-      }
-    }, 50);
-  };
-
-  window.onload = function () {
+fetch("./partials/spinner.html")
+  .then((res) => res.text())
+  .then((data) => {
+    document.getElementById("spinner").innerHTML = data;
     hideSpinner();
-  };
-})();
+  });
+
+function hideSpinner() {
+  setTimeout(() => {
+    let spinner = document.getElementById("spinner");
+    if (spinner) {
+      spinner.classList.add("hide");
+    }
+  }, 100);
+}
 
 // close offcanvas when link clicked
 const myOffCanvas = document.querySelector(".offcanvas");
@@ -30,8 +29,15 @@ navLink.forEach((e) => {
 });
 
 // load navbar
-fetch("nav.html")
+fetch("./partials/nav.html")
   .then((res) => res.text())
   .then((data) => {
     document.querySelector("nav").innerHTML = data;
+  });
+
+// load head
+fetch("./partials/head.html")
+  .then((res) => res.text())
+  .then((data) => {
+    document.querySelector("head").innerHTML += data;
   });
