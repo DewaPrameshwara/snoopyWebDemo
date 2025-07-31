@@ -8,125 +8,77 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
     <!-- CDN Font -->
-    <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet" />
     <!-- css -->
     <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="./style/guideline.css">
+    <link rel="stylesheet" href="./style/guideline.css" />
   </head>
   <body class="overflow-x-hiddens">
-
     <!-- spinner loading -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
       <div class="spinner-border" role="status"></div>
-      <img class="position-absolute top-50 start-50 translate-middle icon-small" src="./aset/logo.png" alt="LOGO">
+      <img class="position-absolute top-50 start-50 translate-middle icon-small" src="./aset/logo.png" alt="LOGO" />
     </div>
 
     <!-- nav -->
-    <nav class="navbar bg-body-tertiary fixed-top">
-      <div class="container-fluid">
-
-        <!-- navbar -->
-        <a class="nav-title navbar-brand" href="index.html#home">SNOOPY</a>
-        <button class="navbar-toggler d-sm-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <ul class="nav d-none d-sm-flex">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#homePage">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#monitoring">Monitoring</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="guideline.html#guideLine">Guideline</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="handling-apnea.html#handlingApnea">Handling Apnea</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="history.html#history">History of Apnea</a>
-          </li>
-        </ul>
-
-        <!-- offcanvas -->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <img src="./aset/logo.png" class="w-25" alt="LOGO.png" />
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Hello, Mom!</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <hr class="mx-4 my-0" style="color: var(--red)" />
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#homePage"> <i class="fa-solid fa-house fa-xl me-2"></i></i>Home</a>
-              </li>
-              <li class="nav-item my-2">
-                <a class="nav-link" href="index.html#monitoring"> <i class="fa-solid fa-heart-pulse fa-xl me-2"></i>Monitoring</a>
-              </li>
-              <hr class="my-2" style="color: var(--red)" />
-              <li class="nav-item">
-                <a class="nav-link" href="guideline.html#guideLine"> <i class="fa-solid fa-book-medical fa-xl me-2"></i>Guideline</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="handling-apnea.html#handlingApnea"> <i class="fa-solid fa-hand-holding-medical fa-xl me-2"></i>Handling Apnea</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="history.html#history"><i class="fa-solid fa-clock-rotate-left fa-xl me-2"></i>History of Apnea</a>
-              </li>
-              <hr class="my-2" style="color: var(--red)" />
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </nav>
+    <nav class="navbar bg-body-tertiary fixed-top"></nav>
 
     <!-- guideline -->
-     <div id="guideLine" class="page guideline-page">
+    <div id="guideLine" class="page guideline-page">
       <head>
         <a class="nav-link page-title" href="guideline.html#guideLine"> <i class="fa-solid fa-book-medical fa-xl me-2"></i>Guideline</a>
       </head>
       <main>
         <div class="row column-gap-5">
-
           <!-- definition -->
           <div class="definition col-12 col-sm-5 mt-4">
-            <div class="card rounded-5" style="width: 100%;">
+            <div class="card rounded-5" style="width: 100%">
               <div class="card-header d-flex justify-content-between rounded-5">
-                <img src="/aset/image/mom-baby.svg" alt="Mom and Baby">
-                <h1>WHAT IS <br> <span>Sleep Apnea?</span></h1>
+                <img src="/aset/image/mom-baby.svg" alt="Mom and Baby" />
+                <h1>
+                  WHAT IS <br />
+                  <span>Sleep Apnea?</span>
+                </h1>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-12 d-flex align-items-center">
                     <i class="fa-solid fa-circle-info fa-xl"></i>
                     <p class="card-text text">
-                      Obstructive Sleep Apnea (OSA) yaitu suatu kelainan pernapasan saat tidur yang ditandai dengan obstruksi saluran napas atas parsial berkepanjangan yang menganggu ventilasi dan pola tidur normal. Terdapat episode apnea sebanyak ≥30 kali dalam 8 jam, lamanya paling sedikit 10 detik dan terjadi selama fase tidur rapid eye movement (REM) dan non rapid eye movement (NREM).
+                      Obstructive Sleep Apnea (OSA) yaitu suatu kelainan pernapasan saat tidur yang ditandai dengan obstruksi saluran napas atas parsial berkepanjangan yang menganggu ventilasi dan pola tidur normal. Terdapat episode apnea
+                      sebanyak ≥30 kali dalam 8 jam, lamanya paling sedikit 10 detik dan terjadi selama fase tidur rapid eye movement (REM) dan non rapid eye movement (NREM).
                     </p>
                   </div>
                   <div class="col-12 d-flex align-items-center">
                     <i class="fa-solid fa-heart-pulse fa-xl"></i>
                     <p class="card-text text my-2">
-                      Parameter kriteria sleep apnea ditentukan oleh saturasi oksigen (SpO2) dan denyut jantung (BPM). Nilai SpO2 dalam keadaan normal berkisar 95-100% sedangkan nilai BPM berkisar 80-110 detak/menit. <span class="warning">Penurunan kadar SpO2 mencapai <90%</span> disertai dengan nilai denyut jantung (BPM) yang menurun dapat dikategorikan jika anak memiliki <span class="warning">potensi masalah</span> dan apabila <span class="warning">kadar SpO2 mencapai <80%</span> maka anak dikategorikan dalam <span class="warning">kondisi darurat apnea</span>.  
+                      Parameter kriteria sleep apnea ditentukan oleh saturasi oksigen (SpO2) dan denyut jantung (BPM). Nilai SpO2 dalam keadaan normal berkisar 95-100% sedangkan nilai BPM berkisar 80-110 detak/menit.
+                      <span class="warning">Penurunan kadar SpO2 mencapai <90%</span> disertai dengan nilai denyut jantung (BPM) yang menurun dapat dikategorikan jika anak memiliki <span class="warning">potensi masalah</span> dan apabila
+                      <span class="warning">kadar SpO2 mencapai <80%</span> maka anak dikategorikan dalam <span class="warning">kondisi darurat apnea</span>.
                     </p>
                   </div>
                   <div class="col-12 d-flex align-items-center">
                     <i class="fa-solid fa-triangle-exclamation fa-xl"></i>
                     <p class="card-text text">
-                      Kriteria SpO2 kondisi Sleep apnea : <br>
-                      Normal: 95-100% <br>
-                      Rendah (perlu perhatian): Di bawah 95% <br>
-                      Cukup Rendah (indikasi potensi masalah): Di bawah 90% <br>
-                      Sangat Rendah (kondisi darurat): Di bawah 80% <br>
+                      Kriteria SpO2 kondisi Sleep apnea : <br />
+                      Normal: 95-100% <br />
+                      Rendah (perlu perhatian): Di bawah 95% <br />
+                      Cukup Rendah (indikasi potensi masalah): Di bawah 90% <br />
+                      Sangat Rendah (kondisi darurat): Di bawah 80% <br />
                     </p>
                   </div>
                 </div>
@@ -140,75 +92,79 @@
               <h1>More Information</h1>
             </div>
 
-                <div class="accordion row more-row mt-4 rounded-4" id="accordionExample">
-                  <div class="accordion-item">
-                    <div class="col accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <i class="fa-solid fa-baby"></i>
-                        <p class="text text-center m-2">Gejala Sleep Apnea</p>
-                      </button>
-                    </div>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <div class="more-text">Pada anak berusia <5 tahun, gejala yang sering muncul yaitu mendengkur, yang terbagi menjadi 2 jenis yaitu, occasional snoring (<3 kali/minggu) dan habitual snoring (≥3 kali/minggu). Pada anak berusia 5 tahun, gejala yang diperlihatkan antara lain, enuresis/mengompol, gangguan perhatian, gagal tumbuh, hiperaktif, mengantuk pada siang hari, dan sering terbangun saat malam hari.</div>
-                      </div>
+            <div class="accordion row more-row mt-4 rounded-4" id="accordionExample">
+              <div class="accordion-item">
+                <div class="col accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fa-solid fa-baby"></i>
+                    <p class="text text-center m-2">Gejala Sleep Apnea</p>
+                  </button>
+                </div>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="more-text">
+                      Pada anak berusia <5 tahun, gejala yang sering muncul yaitu mendengkur, yang terbagi menjadi 2 jenis yaitu, occasional snoring (<3 kali/minggu) dan habitual snoring (≥3 kali/minggu). Pada anak berusia 5 tahun, gejala
+                      yang diperlihatkan antara lain, enuresis/mengompol, gangguan perhatian, gagal tumbuh, hiperaktif, mengantuk pada siang hari, dan sering terbangun saat malam hari.
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <div class="accordion row more-row mt-4 rounded-4" id="2accordionExample">
-                  <div class="accordion-item">
-                    <div class="col accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapeThree" aria-expanded="false" aria-controls="collapeThree">
-                        <i class="fa-solid fa-shield-heart"></i>
-                        <p class="text text-center m-2">Pencegahan Sleep Apnea</p>
-                      </button>
-                    </div>
-                    <div id="collapeThree" class="accordion-collapse collapse" data-bs-parent="#2accordionExample">
-                      <div class="accordion-body">
-                        <div class="more-text">Mengontrol berat badan dengan pola makan yang sehat diimbangi dengan aktivitas fisik yang cukup, penerapan gaya hidup yang sehat, menjaga lingkungan agar tetap bersih, serta menjaga kualitas tidur, meliputi: tidur dengan durasi yang cukup, tidur dengan posisi yang nyaman.</div>
-                      </div>
+            <div class="accordion row more-row mt-4 rounded-4" id="2accordionExample">
+              <div class="accordion-item">
+                <div class="col accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapeThree" aria-expanded="false" aria-controls="collapeThree">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <p class="text text-center m-2">Pencegahan Sleep Apnea</p>
+                  </button>
+                </div>
+                <div id="collapeThree" class="accordion-collapse collapse" data-bs-parent="#2accordionExample">
+                  <div class="accordion-body">
+                    <div class="more-text">
+                      Mengontrol berat badan dengan pola makan yang sehat diimbangi dengan aktivitas fisik yang cukup, penerapan gaya hidup yang sehat, menjaga lingkungan agar tetap bersih, serta menjaga kualitas tidur, meliputi: tidur
+                      dengan durasi yang cukup, tidur dengan posisi yang nyaman.
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <div class="accordion row more-row mt-4 rounded-4" id="3accordionExample">
-                  <div class="accordion-item">
-                    <div class="col accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapeFour" aria-expanded="false" aria-controls="collapeFour">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <p class="text text-center m-2">Risiko Sleep Apnea</p>
-                      </button>
-                    </div>
-                    <div id="collapeFour" class="accordion-collapse collapse" data-bs-parent="#3accordionExample">
-                      <div class="accordion-body">
-                        <div class="more-text">Komplikasi dari OSA (Obstructive Sleep Apnea) antara lain, gangguan tingkah laku, kelainan kardiovaskular, dan gagal tumbuh. Resiko paling tinggi yaitu menyebabkan kematian mendadak.</div>
-                      </div>
-                    </div>
+            <div class="accordion row more-row mt-4 rounded-4" id="3accordionExample">
+              <div class="accordion-item">
+                <div class="col accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapeFour" aria-expanded="false" aria-controls="collapeFour">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p class="text text-center m-2">Risiko Sleep Apnea</p>
+                  </button>
+                </div>
+                <div id="collapeFour" class="accordion-collapse collapse" data-bs-parent="#3accordionExample">
+                  <div class="accordion-body">
+                    <div class="more-text">Komplikasi dari OSA (Obstructive Sleep Apnea) antara lain, gangguan tingkah laku, kelainan kardiovaskular, dan gagal tumbuh. Resiko paling tinggi yaitu menyebabkan kematian mendadak.</div>
                   </div>
                 </div>
-                
-                <div class="accordion row more-row mt-4 rounded-4" id="4accordionExample">
-                  <div class="accordion-item">
-                    <div class="col accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapeFive" aria-expanded="false" aria-controls="collapeFive">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <p class="text text-center m-2">Pemicu Sleep Apnea</p>
-                      </button>
-                    </div>
-                    <div id="collapeFive" class="accordion-collapse collapse" data-bs-parent="#4accordionExample">
-                      <div class="accordion-body">
-                        <div class="more-text">Hipertofi adenoid atau tonsil, obesitas, disproporsi sefalometri (ketidakseimbangan hubungan antara rahang dengan keranagka wajah), serta kelainan daerah hidung</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </div>
+            </div>
 
+            <div class="accordion row more-row mt-4 rounded-4" id="4accordionExample">
+              <div class="accordion-item">
+                <div class="col accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapeFive" aria-expanded="false" aria-controls="collapeFive">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <p class="text text-center m-2">Pemicu Sleep Apnea</p>
+                  </button>
+                </div>
+                <div id="collapeFive" class="accordion-collapse collapse" data-bs-parent="#4accordionExample">
+                  <div class="accordion-body">
+                    <div class="more-text">Hipertofi adenoid atau tonsil, obesitas, disproporsi sefalometri (ketidakseimbangan hubungan antara rahang dengan keranagka wajah), serta kelainan daerah hidung</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
         </div>
       </main>
-     </div>
+    </div>
 
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

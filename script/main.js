@@ -28,3 +28,10 @@ navLink.forEach((e) => {
     }
   });
 });
+
+// load navbar
+fetch("nav.html")
+  .then((res) => res.text())
+  .then((data) => {
+    document.querySelector("nav").innerHTML = data;
+  });
