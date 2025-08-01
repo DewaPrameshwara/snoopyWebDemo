@@ -82,6 +82,10 @@ nav li.nav-item a:hover {
   color: var(--pink);
 }
 
+nav .user {
+  cursor: pointer;
+}
+
 .offcanvas {
   background-color: #ffe9e9;
 }
@@ -96,6 +100,18 @@ nav li.nav-item a:hover {
 .text {
   font-family: "Glacial Indifference", sans-serif;
 }
+
+/* .offcanvas {
+  display: block !important;
+  background-color: rgba(128, 128, 128, 0.3);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 99999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
 
 /* responsive */
 

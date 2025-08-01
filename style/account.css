@@ -1,0 +1,66 @@
+#account-offcanvas {
+  background-color: rgba(128, 128, 128, 0.3);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 99999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.firebaseui-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+
+.firebaseui-container .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.firebaseui-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.firebaseui-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.firebaseui-container #login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.firebaseui-container #login-btn:hover {
+  background-color: #3367d6;
+}
+
+.firebaseui-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  color: #555;
+}
+
+#user-info {
+  margin-left: auto;
+}
