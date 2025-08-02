@@ -164,12 +164,19 @@ fetch("./partials/head.html")
   .catch((err) => console.error("Gagal fetch head:", err));
 
 function alertBerhasilLoginLogout(info, name) {
-  document.querySelector("body").innerHTML += `
-  <div class="alert alert-berhasil-login-logout alert-warning ing alert-dismissible fixed-top mt-3" role="alert">
-  <div>
-  <strong>Anda telah berhasil ${info} sebagai ${name}</strong>
-  </div>
+  const alertHTML = `
+    <div class="alert alert-berhasil-login-logout alert-warning ing alert-dismissible fixed-top mt-3" role="alert">
+      <div>
+        <strong>Anda telah berhasil ${info} sebagai ${name}</strong>
+      </div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-`;
+  `;
+  document.body.insertAdjacentHTML("beforeend", alertHTML);
+
+  // Hilangkan otomatis setelah 4 detik
+  setTimeout(() => {
+    const alertEl = document.querySelector(".alert-berhasil-login-logout");
+    if (alertEl) alertEl.remove();
+  }, 2500);
 }
