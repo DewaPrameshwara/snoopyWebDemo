@@ -3,7 +3,7 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 99999;
+  /* z-index: 9999 !important; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -32,6 +32,8 @@
 }
 
 .firebaseui-container input {
+  position: relative;
+  /* z-index: 99999999999; */
   width: 100%;
   padding: 10px;
   margin: 0.5rem 0;
@@ -54,13 +56,14 @@
   background-color: #3367d6;
 }
 
-.firebaseui-footer {
-  text-align: center;
-  font-size: 0.8rem;
-  margin-top: 1rem;
-  color: #555;
+.firebaseui-container .footer:hover {
+  color: #3367d6;
 }
 
-#user-info {
-  margin-left: auto;
+.firebaseui-container .footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9em;
+  cursor: pointer;
 }

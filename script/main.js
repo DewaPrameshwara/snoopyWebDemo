@@ -34,25 +34,27 @@ fetch("./partials/nav.html")
   .then((res) => res.text())
   .then((navData) => {
     document.querySelector("nav").innerHTML = navData;
-
     return fetch("./partials/login.html");
   })
   .then((res) => res.text())
   .then((loginData) => {
     const body = document.querySelector("body");
+    const myOffCanvas = new bootstrap.Offcanvas(document.getElementById("offcanvasNavbar"));
     body.insertAdjacentHTML("beforeend", loginData); // tempel login form
 
     const userBtn = document.querySelectorAll("a.user");
     const loginPlaceholder = document.getElementById("account-offcanvas");
     const loginBtn = document.getElementById("login-btn");
     const closeBtn = document.getElementById("btn-close");
+    const warningUN = document.getElementById("warning-username");
 
-    // Tampilkan username kalau sudah tersimpan
     restoreUsername();
 
     userBtn.forEach((btn) => {
       btn.addEventListener("click", () => {
         loginPlaceholder.classList.toggle("d-none");
+        myOffCanvas.hide();
+        warningUN.innerText = "";
       });
     });
 
@@ -66,12 +68,16 @@ fetch("./partials/nav.html")
 
 function restoreUsername() {
   const storedUsername = localStorage.getItem("username");
-  const usernameDisplay = document.getElementById("username-display");
+  const usernameDisplay = document.querySelectorAll(".username-display");
   const loginBtn = document.getElementById("login-btn");
+  const headerH2 = document.querySelector(".header h2");
 
-  if (storedUsername && usernameDisplay && loginBtn) {
-    usernameDisplay.innerHTML = `<i class="fa-solid fa-circle-user fa-2xl me-2"></i>${storedUsername}`;
+  if (storedUsername && loginBtn) {
+    usernameDisplay.forEach((el) => {
+      el.innerHTML = `<i class="fa-solid fa-circle-user fa-2xl me-2"></i>${storedUsername}`;
+    });
     loginBtn.innerHTML = "Log Out";
+    headerH2.innerHTML = "Log Out";
     loginBtn.setAttribute("data-logged", "true");
     loginBtn.setAttribute("type", "button");
   }
@@ -79,43 +85,70 @@ function restoreUsername() {
 
 function loginForm(loginPlaceholder, loginBtn) {
   loginBtn.addEventListener("click", () => {
-    const email = document.getElementById("login-email").value.trim();
-    const username = document.getElementById("login-username").value.trim();
-    const password = document.getElementById("login-password").value.trim();
+    const emailInput = document.getElementById("login-email");
+    const usernameInput = document.getElementById("login-username");
+    const passwordInput = document.getElementById("login-password");
+
+    const email = emailInput.value.trim();
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value.trim();
     const warningUN = document.getElementById("warning-username");
-    const usernameDisplay = document.getElementById("username-display");
+    const usernameDisplay = document.querySelectorAll(".username-display");
+    const headerH2 = document.querySelector(".header h2");
 
     const isLogged = loginBtn.dataset.logged === "true";
 
+    // Jika belum login
     if (!isLogged) {
       if (!email || !username || !password) {
         warningUN.innerText = "Semua data wajib diisi.";
-        return;
+        return; // Tidak ubah isi input
       }
 
-      warningUN.innerText = "";
+      // Simpan username ke localStorage dan tampilkan
       localStorage.setItem("username", username);
-      usernameDisplay.innerHTML = `<i class="fa-solid fa-circle-user fa-2xl me-2"></i>${username}`;
+
+      usernameDisplay.forEach((el) => {
+        el.innerHTML = `<i class="fa-solid fa-circle-user fa-2xl me-2"></i>${username}`;
+      });
 
       loginBtn.innerHTML = "Log Out";
+      headerH2.innerHTML = "Log Out";
       loginBtn.setAttribute("data-logged", "true");
       loginBtn.setAttribute("type", "button");
 
+      // Reset semua input setelah login berhasil
+      emailInput.value = "";
+      usernameInput.value = "";
+      passwordInput.value = "";
+
       loginPlaceholder.classList.add("d-none");
+      warningUN.innerText = "";
     } else {
-      // Logout
-      if (username != localStorage.getItem("username")) {
+      // Jika username tidak sesuai
+      if (username !== localStorage.getItem("username")) {
         warningUN.innerText = "Username anda tidak sesuai.";
         return;
       }
+
       localStorage.removeItem("username");
-      usernameDisplay.innerHTML = `<i class="fa-solid fa-circle-user fa-2xl me-2"></i>ACCOUNT`;
+
+      usernameDisplay.forEach((el) => {
+        el.innerHTML = `<i class="fa-solid fa-circle-user fa-2xl me-2"></i>ACCOUNT`;
+      });
 
       loginBtn.innerHTML = "Log In";
+      headerH2.innerHTML = "Log In";
       loginBtn.setAttribute("data-logged", "false");
       loginBtn.setAttribute("type", "reset");
 
+      // Kosongkan input saat logout
+      emailInput.value = "";
+      usernameInput.value = "";
+      passwordInput.value = "";
+
       loginPlaceholder.classList.add("d-none");
+      warningUN.innerText = "";
     }
   });
 }

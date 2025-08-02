@@ -101,6 +101,10 @@ nav .user {
   font-family: "Glacial Indifference", sans-serif;
 }
 
+form * {
+  pointer-events: auto;
+}
+
 /* .offcanvas {
   display: block !important;
   background-color: rgba(128, 128, 128, 0.3);
