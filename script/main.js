@@ -124,6 +124,7 @@ function loginForm(loginPlaceholder, loginBtn) {
 
       loginPlaceholder.classList.add("d-none");
       warningUN.innerText = "";
+      alertBerhasilLoginLogout("login", username);
     } else {
       // Jika username tidak sesuai
       if (username !== localStorage.getItem("username")) {
@@ -149,6 +150,7 @@ function loginForm(loginPlaceholder, loginBtn) {
 
       loginPlaceholder.classList.add("d-none");
       warningUN.innerText = "";
+      alertBerhasilLoginLogout("logout", username);
     }
   });
 }
@@ -160,3 +162,14 @@ fetch("./partials/head.html")
     document.querySelector("head").innerHTML += data;
   })
   .catch((err) => console.error("Gagal fetch head:", err));
+
+function alertBerhasilLoginLogout(info, name) {
+  document.querySelector("body").innerHTML += `
+  <div class="alert alert-berhasil-login-logout alert-warning ing alert-dismissible fixed-top mt-3" role="alert">
+  <div>
+  <strong>Anda telah berhasil ${info} sebagai ${name}</strong>
+  </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+`;
+}

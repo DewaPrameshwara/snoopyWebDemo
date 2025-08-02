@@ -105,17 +105,10 @@ form * {
   pointer-events: auto;
 }
 
-/* .offcanvas {
-  display: block !important;
-  background-color: rgba(128, 128, 128, 0.3);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 99999;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
+.alert-berhasil-login-logout {
+  max-width: 900px;
+  margin: 0px auto;
+}
 
 /* responsive */
 

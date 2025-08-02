@@ -112,6 +112,7 @@ submitBtn.addEventListener("click", () => {
   const data_interval = interval.value;
   if (data_interval > 3600) {
     alert("Jumlah interval terlalu tinggi.\nMaksimal 3600 detik (1 jam)");
+    return;
   }
   const readings = random(data_minDate, data_maxDate, data_minTime, data_maxTime, data_interval);
   console.log(readings);
