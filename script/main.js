@@ -180,3 +180,10 @@ function alertBerhasilLoginLogout(info, name) {
     if (alertEl) alertEl.remove();
   }, 2500);
 }
+
+export function notLoginYet() {
+  if (!document.getElementById("account-offcanvas")) {
+    console.log("Form login tidak ditemukan");
+  }
+  document.getElementById("account-offcanvas").classList.remove("d-none");
+}

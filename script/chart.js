@@ -1,4 +1,5 @@
 import { random } from "../module/dataDummyMonitoring.js";
+import { notLoginYet } from "./main.js";
 const ctx = document.getElementById("Chart");
 const dataSPO2 = document.getElementById("data-spo2");
 const dataBPM = document.getElementById("data-bpm");
@@ -17,7 +18,7 @@ const popUp = filterOffCanvas.querySelector(".filter");
 
 let startMonitor = false;
 let intervalId;
-const btn = document.getElementById("ssChart");
+const downloadDataBtn = document.getElementById("ssChart");
 const submitBtn = document.getElementById("submitSsChart");
 const cancelSubmit = document.getElementById("submitSsChartCancel");
 // const readings = [
@@ -71,35 +72,47 @@ const chart = new Chart(ctx, {
 
 monitoringBtn.addEventListener("click", () => {
   showAlert();
+  setTimeout(() => {
+    const alertWarning = alertPlaceHolder.querySelector(".alert.alert-warning.alert-dismissible");
+    if (alertWarning) alertWarning.remove();
+  }, 5000);
 });
 
 demoMonitoringBtn.addEventListener("click", () => {
-  if (!startMonitor) {
-    startMonitor = true;
-    simulation();
-    demoMonitoringBtn.innerHTML = "Stop Monitoring (Demo)";
-    demoMonitoringBtn.classList.add("btn-danger");
-    demoMonitoringBtn.classList.remove("btn-success");
-  } else {
-    clearInterval(intervalId);
-    startMonitor = false;
-    demoMonitoringBtn.innerHTML = "Start Monitoring (Demo)";
-    demoMonitoringBtn.classList.remove("btn-danger");
-    demoMonitoringBtn.classList.add("btn-success");
+  if (localStorage.getItem("username") != null) {
+    if (!startMonitor) {
+      startMonitor = true;
+      simulation();
+      demoMonitoringBtn.innerHTML = "Stop Monitoring (Demo)";
+      demoMonitoringBtn.classList.add("btn-danger");
+      demoMonitoringBtn.classList.remove("btn-success");
+    } else {
+      clearInterval(intervalId);
+      startMonitor = false;
+      demoMonitoringBtn.innerHTML = "Start Monitoring (Demo)";
+      demoMonitoringBtn.classList.remove("btn-danger");
+      demoMonitoringBtn.classList.add("btn-success");
+    }
+  } else if (localStorage.getItem("username") === null) {
+    notLoginYet();
   }
 });
 
-btn.addEventListener("click", () => {
-  filterOffCanvas.classList.remove("d-none");
-  cancelSubmit.addEventListener("click", () => {
-    filterOffCanvas.classList.add("d-none");
-    resetFilterInput();
-  });
-  document.addEventListener("click", (e) => {
-    if (!popUp.contains(e.target) && !btn.contains(e.target)) {
+downloadDataBtn.addEventListener("click", () => {
+  if (localStorage.getItem("username") != null) {
+    filterOffCanvas.classList.remove("d-none");
+    cancelSubmit.addEventListener("click", () => {
       filterOffCanvas.classList.add("d-none");
-    }
-  });
+      resetFilterInput();
+    });
+    document.addEventListener("click", (e) => {
+      if (!popUp.contains(e.target) && !btn.contains(e.target)) {
+        filterOffCanvas.classList.add("d-none");
+      }
+    });
+  } else if (localStorage.getItem("username") === null) {
+    notLoginYet();
+  }
 });
 
 submitBtn.addEventListener("click", () => {
