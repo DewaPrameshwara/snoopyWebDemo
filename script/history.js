@@ -61,8 +61,8 @@ downloadBtn.addEventListener("click", () => {
     });
 
     // Unduh file PDF
-    doc.save(`Riwayat Apnea.pdf`);
-    alert(`File telah disimpan sebagai "Riwayat Apnea.pdf", periksa folder Unduhan anda`);
+    doc.save(`Riwayat Apnea_${new Date().toLocaleString()}.pdf`);
+    alert(`File telah disimpan sebagai "Riwayat Apnea_${new Date().toLocaleString()}.pdf", periksa folder Unduhan anda`);
   } else if (localStorage.getItem("username") === null) {
     notLoginYet();
   }
