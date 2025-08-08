@@ -36,14 +36,14 @@ const chart = new Chart(ctx, {
     labels: [],
     datasets: [
       {
-        label: "SPO2",
+        label: "SPO2 (Saturasi Oksigen)",
         data: [],
         fill: false,
         borderColor: "rgb(65, 184, 213)",
         tension: 0.1,
       },
       {
-        label: "BPM",
+        label: "BPM (Detak Jantung per Menit)",
         data: [],
         fill: false,
         borderColor: "rgb(211, 13, 102)",

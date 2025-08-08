@@ -57,10 +57,6 @@
   color: var(--pink);
 }
 
-.monitoring-page button {
-  font-size: 80%;
-}
-
 #filter-offcanvas {
   background-color: rgba(128, 128, 128, 0.3);
   width: 100vw;
@@ -125,9 +121,6 @@
 
   .monitoring-page .big .box .header {
     font-size: 1.2em;
-  }
-  .monitoring-page button {
-    font-size: 100%;
   }
   #filter-offcanvas .filter {
     width: auto;

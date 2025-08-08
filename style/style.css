@@ -101,6 +101,11 @@ nav .user {
   font-family: "Glacial Indifference", sans-serif;
 }
 
+.text-justify {
+  text-align: justify;
+  font-size: 1rem !important;
+}
+
 form * {
   pointer-events: auto;
 }
