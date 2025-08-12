@@ -75,11 +75,15 @@ nav li.nav-item a {
 
 nav li.nav-item a {
   color: darkslategray;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 nav li.nav-item a:hover {
   color: var(--pink);
+}
+
+.offcanvas-body .nav-item a {
+  font-weight: normal !important;
 }
 
 nav .user {
