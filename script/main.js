@@ -135,7 +135,7 @@ function loginForm(loginPlaceholder, loginBtn) {
       localStorage.removeItem("username");
 
       usernameDisplay.forEach((el) => {
-        el.innerHTML = `<i class="fa-solid fa-circle-user fa-2xl me-2"></i>ACCOUNT`;
+        el.innerHTML = `<i class="fa-solid fa-circle-user fa-2xl me-2"></i>Akun`;
       });
 
       loginBtn.innerHTML = "Log In";

@@ -7,7 +7,7 @@
   display: none !important;
 }
 
-.handlingapnea-page main .accordion-header button span {
+.handlingapnea-page main span.red {
   font-weight: bold;
   color: var(--red);
 }
