@@ -63,6 +63,7 @@ nav .nav-title,
 
 .funnel-font {
   color: var(--red);
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 
 .funnel-font,

@@ -11,6 +11,14 @@
   max-height: 60vh;
   transform: translateY(130px);
 }
+.home-page .content .box-summary {
+  margin: 0px auto;
+  width: fit-content;
+  background-color: white;
+  color: var(--red);
+  max-width: 450px;
+  box-shadow: 0px 0px 10px rgb(117, 117, 117);
+}
 
 /* responsive */
 /* Tablet */
